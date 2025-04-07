@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Expectancy Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Container styling */
+        .container {
+            width: 90%;
+            height:70%;
+            max-width: 2000px;
+            max-height:4000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 3em;
+            
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.1em;
+            color: #555;
+        }
+
+        /* Form grid layout 
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }*/
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        label {
+            font-size: 2em;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .tooltip {
+            margin-left: 5px;
+            cursor: pointer;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 2em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 2em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Life Expectancy Prediction</h1>
+        <p>Predict your life expectancy based on various demographic factors.</p>
+        
+        <form action="/predict" method="POST">
+            <div class="form-grid">
+                {% for feature, value in default_values.items() %}
+                <div class="form-group">
+                    <label for="{{ feature }}">
+                        {{ feature.replace('_', ' ').title() }}:
+                        <span class="tooltip">ℹ️
+                            <span class="tooltiptext">{{ tool_tips[feature] }}</span>
+                        </span>
+                    </label>
+                    <input type="text" name="{{ feature }}" id="{{ feature }}" value="{{ value }}">
+                </div>
+                {% endfor %}
+            </div>
+            <button type="submit">Predict Life Expectancy</button>
+        </form>
+    </div>
+</body>
+</html>
