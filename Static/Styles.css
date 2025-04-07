@@ -1,0 +1,175 @@
+/* General Container Styling */
+.container {
+    width: 90%;
+    height:70%;
+    max-width: 2000px;
+    max-height:8000px;
+    padding: 30px;
+    background: linear-gradient(135deg, #f9f9f9, #e8f0fe);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+
+      h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 3em;
+            
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.1em;
+            color: #555;
+        }
+
+
+
+        a {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #555;
+        }
+
+/* Labels */
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 2em;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Input Fields */
+input[type="text"] {
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 30em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Hover & Focus Effects */
+input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80);
+    transform: translateY(-3px);
+}
+
+/* Table Container */
+.table-container {
+    overflow-x: auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Header and Cell Styling */
+table th, table td {
+    padding: 18px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.5em;
+}
+
+/* Table Header */
+table th {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Alternating Row Color */
+table tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+/* Table Row Hover Effect */
+table tr:hover {
+    background-color: #e2f0ff;
+    transition: background-color 0.3s ease;
+}
+
+/* Navigation Button Styling */
+.navigate-btn {
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.navigate-btn:hover {
+    background: linear-gradient(135deg, #218838, #19692c);
+    transform: translateY(-3px);
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    table th, table td {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+
+    .navigate-btn {
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 1em;
+    }
+}
